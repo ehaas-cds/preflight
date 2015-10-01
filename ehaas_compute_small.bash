@@ -1,5 +1,5 @@
 #!/bin/bash
-# preflight for softlayer db nodes
+# preflight for softlayer db node
 
 if [ -f "$(dirname $0)/util.bash" ]; then
     source "$(dirname $0)/util.bash"
@@ -9,11 +9,20 @@ else
     rm util.bash
 fi
 
-# check if RHEL is registered
-subscription_status=$(subscription-manager list | grep Status: | awk '{print $2}' | tr -d ' ')
-echo Subscription status is $subscription_status
+# check for sudo access
+sudo -n true
+has_sudo_access=$? # 0 -> has access 1 -> no access
 
-if [ "$subscription_status" = "Subscribed" ]; then
+# check if RHEL is registered
+if [ $has_sudo_access -eq 0 ]; then
+  subscription_status=$(subscription-manager list | grep Status: | awk '{print $2}' | tr -d ' ')
+else
+  subscription_status="No Sudo Access"
+fi
+
+if [ "$subscription_status" = "No Sudo Access" ]; then
+  output_fail "Current user does not have Sudo Access to check RHEL Subscription"
+elif [ "$subscription_status" = "Subscribed" ]; then
   output_ok "RHEL is registered with Red Hat Subscription Management"
 else
   output_fail "RHEL is not registered with Red Hat Subscription Management"
