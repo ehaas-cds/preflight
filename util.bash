@@ -1,7 +1,7 @@
 #!/bin/bash
 # shared functions and variables
 
-base_url="https://raw.githubusercontent.com/cloudant/preflight/master"
+base_url="https://raw.githubusercontent.com/ehaas-cds/preflight/master"
 
 success=0
 
