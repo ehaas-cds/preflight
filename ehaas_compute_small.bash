@@ -4,7 +4,7 @@
 if [ -f "$(dirname $0)/util.bash" ]; then
     source "$(dirname $0)/util.bash"
 else
-    curl -s -O "https://raw.githubusercontent.com/cloudant/preflight/master/util.bash"
+    curl -s -O "https://raw.githubusercontent.com/ehaas-cds/preflight/master/util.bash"
     source util.bash
     rm util.bash
 fi
