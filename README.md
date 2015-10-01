@@ -7,7 +7,7 @@ This repo contains simple bash scripts to test that a server meets minimum requi
 ## Usage
 To test a node, execute the appropriate script remotely
 ```shell
-curl -s https://raw.githubusercontent.com/cloudant/preflight/master/softlayer-db.bash | bash
+curl -s https://raw.githubusercontent.com/ehaas-cds/preflight/master/ehaas_compute_small.bash | bash
 ```
 
 ## Writing Tests
