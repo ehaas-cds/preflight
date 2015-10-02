@@ -15,7 +15,7 @@ has_sudo_access=$? # 0 -> has access 1 -> no access
 
 # check if RHEL is registered
 if [ $has_sudo_access -eq 0 ]; then
-  subscription_status=$(subscription-manager list | grep Status: | awk '{print $2}' | tr -d ' ')
+  subscription_status=$(subscription-manager list | grep Status: | awk 'NR==1{print $2}' | tr -d ' ')
 else
   subscription_status="No Sudo Access"
 fi
