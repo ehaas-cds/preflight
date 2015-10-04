@@ -10,10 +10,8 @@ else
 fi
 
 # check for sudo access
-#sudo -n true
-#has_sudo_access=$? # 0 -> has access 1 -> no access
-
-has_sudo_access=0
+sudo -n true
+has_sudo_access=$? # 0 -> has access 1 -> no access
 
 # check if RHEL is registered
 if [ $has_sudo_access -eq 0 ]; then
