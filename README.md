@@ -1,8 +1,11 @@
+# Code Source
+https://github.com/cloudant/preflight
+
 # Preflight
 Server testing to run pre-bootstrapping
 
 ## Summary
-This repo contains simple bash scripts to test that a server meets minimum requirements for the cloudant service to be installed. This is intended to be used by cloudant internally as well as providers to confirm their servers before handing them off to cloudant. 
+This repo contains simple bash scripts to test that a server meets minimum requirements for the EHaaS service to be installed. This is intended to be used by EHaaS internally as well as providers to confirm their servers before handing them off to EHaaS. 
 
 ## Usage
 To test a node, execute the appropriate script remotely
