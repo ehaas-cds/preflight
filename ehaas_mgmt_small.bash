@@ -13,7 +13,7 @@ PF_BI_RAM=64000
 export PF_BI_RAM
 
 # Num of data disks, set 0 for management nodes
-NUM_DATA_DISKS=5
+NUM_DATA_DISKS=0
 export NUM_DATA_DISKS
 
 PF_BI_PARTITION_DETAILS="/var 950 /boot 1 /swap 128 /opt 950 /home 950 /tmp 1450 /bigsqlhome 950 / 500"

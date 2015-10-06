@@ -9,7 +9,7 @@ PF_BI_CPU_TYPE="E5-2650"
 export PF_BI_CPU_TYPE
 
 # RAM (MB)
-PF_BI_RAM=64000
+PF_BI_RAM=128000
 export PF_BI_RAM
 
 # Num of data disks, set 0 for management nodes
