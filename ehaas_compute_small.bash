@@ -16,7 +16,7 @@ export PF_BI_RAM
 NUM_DATA_DISKS=5
 export NUM_DATA_DISKS
 
-PF_BI_PARTITION_DETAILS="/var 950 /boot 1 /swap 128 /opt 950 /home 950 /tmp 1450 /bigsqlhome 950 / 500"
+PF_BI_PARTITION_DETAILS="/var 950 /boot 1 /opt 950 /home 950 /tmp 1450 /bigsqlhome 950 / 500"
 export PF_BI_PARTITION_DETAILS
 
 bash ./ehaas_template.bash
