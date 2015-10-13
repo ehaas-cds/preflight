@@ -10,7 +10,7 @@ else
 fi
 
 # check if RHEL is registered
-#run_test "RHEL_subscription"
+run_test "RHEL_subscription"
 
 # test CPU total (cores)
 run_test "cpu" $PF_BI_NUM_CORES
