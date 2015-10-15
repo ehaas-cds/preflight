@@ -25,11 +25,16 @@ run_test "memory" $PF_BI_RAM
 #run_test "RAID"
 
 # test data disk (KB)
-num_of_disks=$NUM_DATA_DISKS
-for i in `seq 1 $num_of_disks`;
-do
-        run_test "disk_space" "/disk"$i 3600000000
-done
+#num_of_disks=$NUM_DATA_DISKS
+#for i in `seq 1 $num_of_disks`;
+#do
+#        run_test "disk_space" "/disk"$i 3600000000
+#done
+
+# unmounted tests - first param num of disks, second param size in bytes
+if [ $NUM_DATA_DISKS -gt 0 ]; then
+  run_test "disk_space_unmounted" $NUM_DATA_DISKS 3600000000000
+fi
 
 #run_test "filesystem_type" "/" "ext3" "ext4"
 
