@@ -22,4 +22,18 @@ preflight_test () {
 	  output_fail "RHEL is not registered with Red Hat Subscription Management"
 	fi
 
+    if [ -z $2 ]; then
+            expected_min_version=6.5
+    else
+            expected_min_version=$(echo $2 | cut -c 1-3) # use first two numbers for comparison, in case of 5.7.1, use 5.7
+    fi
+
+    installed_version=$(cat /etc/redhat-release | awk -F' ' '{print $7}' | cut -c 1-3)
+
+    if (( $(echo "$installed_version >= $expected_min_version" | bc -l) )); then
+            output_ok "RHEL version is $installed_version (minimum expected version: $expected_min_version)"
+    else
+            output_fail "RHEL version is $installed_version (minimum expected version: $expected_min_version)"
+    fi;
+
 }
