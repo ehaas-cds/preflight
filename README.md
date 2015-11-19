@@ -13,6 +13,15 @@ To test a node, execute the appropriate script remotely
 curl -s https://raw.githubusercontent.com/ehaas-cds/preflight/master/ehaas_compute_small.bash | bash
 ```
 
+Alternative way is to download the entire script folder as zip and execute it locally
+```shell
+cd /tmp
+wget https://github.com/ehaas-cds/preflight/archive/master.zip
+unzip master.zip
+cd preflight-master/
+bash ehaas_compute_small.bash
+```
+
 ## Writing Tests
  * All tests should be written in bash and put in the `tests` directory. 
  * Try not to make assumptions about the system the test will be run on and be flexible in its writing.
