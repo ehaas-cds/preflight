@@ -19,4 +19,8 @@ export NUM_DATA_DISKS
 PF_BI_PARTITION_DETAILS="/var 950 /boot 1 /opt 950 /home 950 /tmp 1450 /bigsqlhome 950 / 500"
 export PF_BI_PARTITION_DETAILS
 
-bash ./ehaas_template.bash
+if [ -f "$(dirname $0)/ehaas_template.bash" ]; then
+    bash ./ehaas_template.bash
+else
+    curl -s https://raw.githubusercontent.com/ehaas-cds/preflight/master/ehaas_template.bash | bash
+fi
