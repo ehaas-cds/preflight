@@ -26,6 +26,13 @@ output_fail () {
   success=1
 }
 
+output_log () {
+  echo -e ""
+  echo "########## Output of '$1' ##########"
+  echo "$2" | brown
+  echo -e ""
+}
+
 black () { color_text 30; }
 blue () { color_text 34; }
 green () { color_text 32; }

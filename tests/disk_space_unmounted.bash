@@ -17,7 +17,7 @@ preflight_test () {
         output_ok "'$actual_number_of_disks' Data Disks Found"
     fi
 
-    for x in $(lsblk -b | grep -v sda | grep part | awk '{ print $4 }'); do 
+    for x in $(lsblk -b | grep -v sda | grep part | awk '{ print $4 }'); do
         actual_size=$x
 
         if [ -z "$actual_size" ]; then
@@ -29,5 +29,7 @@ preflight_test () {
         fi
     done
 
-    
+    output_log "blkid" "$(blkid)"
+    output_log "lsblk -l | sort" "$(lsblk -l | sort)"
+
 }
